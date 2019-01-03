@@ -1,0 +1,1 @@
+scp -i {token path} {path} {user}@{ip}:{remote path}

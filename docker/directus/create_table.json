@@ -53,7 +53,7 @@ POST
 
 http://13.113.165.41:8081/_/fields/client
 POST
-{"sort":null,"field":"client_key","type":"string","datatype":"VARCHAR","interface":"hashed","default_value":null,"options":{"hide":false,"placeholder":"Enter a value...","showHash":true,"hashingType":"md5"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":100,"collection":"client"}
+{"data":{"collection":"client","field":"client_key","datatype":"VARCHAR","unique":false,"primary_key":false,"auto_increment":false,"default_value":null,"note":null,"signed":true,"id":152,"type":"string","sort":null,"interface":"text-input","hidden_detail":false,"hidden_browse":false,"required":false,"options":{"trim":false,"showCharacterCount":true,"formatValue":false,"width":"auto"},"locked":false,"translation":null,"readonly":false,"width":4,"validation":null,"group":null,"length":"200"}}
 
 http://13.113.165.41:8081/_/collections/client
 PATCH

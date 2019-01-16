@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  php-apache:
+    build: "php-apache/"
+    container_name: "api-php-apache"
+    volumes:
+      - ./:/var/www/html    
+    # depends_on:
+    #   - mysql
+    restart: always
+    ports:
+      - "8080:80"
+networks:
+  default:
+    external:
+      name: cluster
+#   mysql:
+#     image: mysql:5.7
+#     container_name: "api-mysql"
+#     environment:
+#       MYSQL_ROOT_PASSWORD: "root"
+#       MYSQL_DATABASE: "directus"
+#     ports:
+#       - "3306:3306"
+#       - "33060:33060"
+# #    volumes:
+# #      - ./volumes/mysql:/var/lib/mysql
+#     restart: always
+#     expose:
+#       - "3306"

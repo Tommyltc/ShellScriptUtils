@@ -21,3 +21,7 @@ services:
     restart: always
     expose:
       - "3306"
+# networks:
+#   default:
+#     external:
+#       name: cluster

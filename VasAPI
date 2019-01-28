@@ -1,0 +1,232 @@
+//Translation
+POST http://13.113.165.41/_/collections
+{"collection":"translation","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+POST http://13.113.165.41/_/fields/translation
+{"sort":null,"field":"en","type":"string","datatype":"TEXT","interface":"textarea","default_value":null,"options":{"rows":12},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"translation"}
+
+POST http://13.113.165.41/_/fields/translation
+{"sort":null,"field":"zh","type":"string","datatype":"TEXT","interface":"textarea","default_value":null,"options":{"rows":12},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"translation"}
+
+//Translation Image
+POST http://13.113.165.41/_/collections
+{"collection":"translation_image","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+POST http://13.113.165.41/_/fields/translation_image
+{"sort":null,"field":"file_relation","type":"file","datatype":"INT","interface":"file","default_value":null,"options":{"viewType":"cards","viewOptions":{"title":"title","subtitle":"type","content":"description","src":"data"},"viewQuery":[],"filters":[]},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"translation_image"}
+
+POST http://13.113.165.41/_/fields/translation_image
+{"sort":null,"field":"locale","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"translation_image"}
+
+//Free item
+POST http://13.113.165.41/_/collections
+{"collection":"item","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"user_updated","datatype":"INT","field":"modified_by","interface":"user-updated","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_updated","datatype":"DATETIME","field":"modified_on","interface":"datetime-updated","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+POST http://13.113.165.41/_/fields/item
+{"sort":null,"field":"code","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"item"}
+
+POST http://13.113.165.41/_/fields/item
+{"sort":null,"field":"vascode","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"item"}
+
+POST http://13.113.165.41/_/fields/item
+{"sort":null,"field":"name","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"item"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"item","field_many":"name","collection_one":"translation"}
+{"collection_many":"translation","field_many":"id","collection_one":"item","field_one":"name"}
+
+POST http://13.113.165.41/_/fields/item
+{"sort":null,"field":"detail","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"item"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"item","field_many":"detail","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/item
+{"sort":null,"field":"tnc","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"item"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"item","field_many":"tnc","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/item
+{"sort":null,"field":"image","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"item"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"item","field_many":"image","collection_one":"translation_image"}
+
+//Option
+POST http://13.113.165.41/_/collections
+{"collection":"option","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"user_updated","datatype":"INT","field":"modified_by","interface":"user-updated","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_updated","datatype":"DATETIME","field":"modified_on","interface":"datetime-updated","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"vascode","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"title","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"option","field_many":"title","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"desc","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"option","field_many":"desc","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"more","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"maxqty","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"normalprice","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"crossoutprice","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"cpprice","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"cppkg","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"acceptclubpoint","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"acceptcreditcard","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"accepttapngo","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+POST http://13.113.165.41/_/fields/option
+{"sort":null,"field":"show","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+//Package
+POST http://13.113.165.41/_/collections
+{"collection":"package","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"user_updated","datatype":"INT","field":"modified_by","interface":"user-updated","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_updated","datatype":"DATETIME","field":"modified_on","interface":"datetime-updated","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"name","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"package","field_many":"name","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"title","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"package","field_many":"title","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"desc","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"package","field_many":"desc","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"image","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"package","field_many":"image","collection_one":"translation_image"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"buyonly","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"storedisplay","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"allowpurchase","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"showvalidity","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"validity","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto","localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"validitywithunit","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"avatar","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"package","field_many":"avatar","collection_one":"translation_image"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"autorenew","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"android","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"ios","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"iosurl","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"tnc","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one","trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"package","field_many":"tnc","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"options","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/relations
+{"collection_many":"package","field_many":"options","collection_one":"option"}
+
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"freeitems","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+POST http://13.113.165.41/_/fields/relations
+{"collection_many":"package","field_many":"freeitems","collection_one":"item"}
+
+//Category
+POST http://13.113.165.41/_/collections
+{"collection":"category","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"user_updated","datatype":"INT","field":"modified_by","interface":"user-updated","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_updated","datatype":"DATETIME","field":"modified_on","interface":"datetime-updated","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+POST http://13.113.165.41/_/fields/category
+{"sort":null,"field":"cat_id","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":true,"unique":true,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":"50","collection":"category"}
+
+POST http://13.113.165.41/_/fields/category
+{"sort":null,"field":"name","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"category","field_many":"name","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/category
+{"sort":null,"field":"desc","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"category","field_many":"desc","collection_one":"translation"}
+
+POST http://13.113.165.41/_/fields/category
+{"sort":null,"field":"color","type":"string","datatype":"VARCHAR","interface":"color","default_value":null,"options":{"input":"hex","output":"hex","formatValue":true,"palette":["#f44336","#9C27B0","#039BE5","#4CAF50","#FFC107"],"paletteOnly":false,"allowAlpha":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":20,"collection":"category"}
+
+POST http://13.113.165.41/_/fields/category
+{"sort":null,"field":"img","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"category","field_many":"img","collection_one":"translation_image"}
+
+POST http://13.113.165.41/_/fields/category
+{"sort":null,"field":"avatar","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"category","field_many":"avatar","collection_one":"translation_image"}
+
+POST http://13.113.165.41/_/fields/category
+{"sort":null,"field":"priceimg","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"category","field_many":"priceimg","collection_one":"translation_image"}
+
+POST http://13.113.165.41/_/fields/category
+{"sort":null,"field":"packtnc","type":"m2o","datatype":"INT","interface":"many-to-one","default_value":null,"options":{"placeholder":"Select one"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+POST http://13.113.165.41/_/fields/category
+{"sort":null,"field":"display","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"choices":{"value1":"Option 1","value2":"Option 2","value3":"Option 3","value4":"Option 4","value5":"Option 5","value6":"Option 6","value7":"Option 7","value8":"Option 8"},"wrap":true,"formatting":true,"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+

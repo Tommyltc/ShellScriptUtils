@@ -21,5 +21,6 @@ RUN apt-get update && \
 
 # Install PHP Extensions
 RUN docker-php-ext-install pdo_mysql mbstring gd
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 RUN a2enmod rewrite

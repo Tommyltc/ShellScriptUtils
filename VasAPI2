@@ -1,0 +1,143 @@
+curl -X POST http://13.113.165.41/_/auth/authenticate -H 'Content-Type: application/json' -d '{"email":"admin@admin.com","password":"1234567890"}'
+
+POST http://13.113.165.41/_/collections
+//*******Create item table
+{"collection":"item","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"user_updated","datatype":"INT","field":"modified_by","interface":"user-updated","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_updated","datatype":"DATETIME","field":"modified_on","interface":"datetime-updated","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+//*******Create option table
+{"collection":"option","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"user_updated","datatype":"INT","field":"modified_by","interface":"user-updated","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_updated","datatype":"DATETIME","field":"modified_on","interface":"datetime-updated","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+//*******Create package table
+{"collection":"package","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"user_updated","datatype":"INT","field":"modified_by","interface":"user-updated","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_updated","datatype":"DATETIME","field":"modified_on","interface":"datetime-updated","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+//*******Create category table
+{"collection":"category","hidden":0,"fields":[{"type":"integer","datatype":"INT","length":15,"field":"id","interface":"primary-key","auto_increment":true,"primary_key":true,"hidden_detail":true,"hidden_browse":true},{"type":"status","datatype":"VARCHAR","length":20,"field":"status","interface":"status","options":{"status_mapping":{"published":{"name":"Published","text_color":"white","background_color":"accent","browse_subdued":false,"browse_badge":true,"soft_delete":false,"published":true},"draft":{"name":"Draft","text_color":"white","background_color":"blue-grey-200","browse_subdued":true,"browse_badge":true,"soft_delete":false,"published":false},"deleted":{"name":"Deleted","text_color":"white","background_color":"red","browse_subdued":true,"browse_badge":true,"soft_delete":true,"published":false}}}},{"type":"user_created","datatype":"INT","field":"created_by","interface":"user-created","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_created","datatype":"DATETIME","field":"created_on","interface":"datetime-created","readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"user_updated","datatype":"INT","field":"modified_by","interface":"user-updated","options":{"template":"{{first_name}} {{last_name}}","display":"both"},"readonly":true,"hidden_detail":true,"hidden_browse":true},{"type":"datetime_updated","datatype":"DATETIME","field":"modified_on","interface":"datetime-updated","readonly":true,"hidden_detail":true,"hidden_browse":true}]}
+
+//*******Item table field
+//Text field
+{"sort":null,"field":"code","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"item"}
+
+{"sort":null,"field":"vascode","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"item"}
+
+//Text area
+{"sort":null,"field":"detail","type":"string","datatype":"LONGTEXT","interface":"textarea","default_value":null,"options":{"rows":12},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"item"}
+
+{"sort":null,"field":"name","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"item"}
+
+{"sort":null,"field":"tnc","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"item"}
+
+//File ref
+{"sort":null,"field":"image","type":"file","datatype":"INT","interface":"file","default_value":null,"options":{"viewType":"cards","viewOptions":{"title":"title","subtitle":"type","content":"description","src":"data"},"viewQuery":[],"filters":[]},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"item"}
+
+//radio option
+{"sort":null,"field":"locale","type":"string","datatype":"VARCHAR","interface":"radio-buttons","default_value":null,"options":{"choices":{"zh":"zh","en":"en"},"format":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":100,"collection":"item"}
+
+{"sort":null,"field":"ref_key","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"item"}
+
+//*******Option table field
+{"sort":null,"field":"vascode","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"option"}
+
+{"sort":null,"field":"title","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"option"}
+
+{"sort":null,"field":"detail","type":"string","datatype":"LONGTEXT","interface":"textarea","default_value":null,"options":{"rows":12},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"item"}
+
+//Number field
+{"sort":null,"field":"more","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+{"sort":null,"field":"maxqty","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+{"sort":null,"field":"normalprice","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+{"sort":null,"field":"crossoutprice","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+{"sort":null,"field":"cpprice","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"option"}
+
+//Boolean field
+{"sort":null,"field":"acceptclubpoint","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+{"sort":null,"field":"acceptcreditcard","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+{"sort":null,"field":"accepttapngo","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+{"sort":null,"field":"show","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+{"sort":null,"field":"locale","type":"string","datatype":"VARCHAR","interface":"radio-buttons","default_value":null,"options":{"choices":{"zh":"zh","en":"en"},"format":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":100,"collection":"option"}
+
+{"sort":null,"field":"ref_key","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"item"}
+
+//*******Package table field
+POST http://13.113.165.41/_/fields/package
+{"sort":null,"field":"option","type":"o2m","datatype":null,"interface":"one-to-many","default_value":null,"options":{},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"item","type":"o2m","datatype":null,"interface":"one-to-many","default_value":null,"options":{},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"name","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+{"sort":null,"field":"title","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+{"sort":null,"field":"desc","type":"string","datatype":"LONGTEXT","interface":"textarea","default_value":null,"options":{"rows":12},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"image","type":"file","datatype":"INT","interface":"file","default_value":null,"options":{"viewType":"cards","viewOptions":{"title":"title","subtitle":"type","content":"description","src":"data"},"viewQuery":[],"filters":[]},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"buyonly","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"storedisplay","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"allowpurchase","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"showvalidity","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"autorenew","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"validity","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"package"}
+
+{"sort":null,"field":"validitywithunit","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+{"sort":null,"field":"tobeexpired","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+{"sort":null,"field":"avatar","type":"file","datatype":"INT","interface":"file","default_value":null,"options":{"viewType":"cards","viewOptions":{"title":"title","subtitle":"type","content":"description","src":"data"},"viewQuery":[],"filters":[]},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"package"}
+
+{"sort":null,"field":"tnc","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+{"sort":null,"field":"android","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+{"sort":null,"field":"ios","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+{"sort":null,"field":"iosurl","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"package"}
+
+{"sort":null,"field":"locale","type":"string","datatype":"VARCHAR","interface":"radio-buttons","default_value":null,"options":{"choices":{"zh":"zh","en":"en"},"format":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":100,"collection":"package"}
+
+{"sort":null,"field":"ref_key","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"package"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"option","field_many":"id","collection_one":"package","field_one":"option"}
+
+{"collection_many":"item","field_many":"id","collection_one":"package","field_one":"item"}
+
+//*******Category table field
+{"sort":null,"field":"cat_id","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"category"}
+
+{"sort":null,"field":"name","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"category"}
+
+{"sort":null,"field":"desc","type":"string","datatype":"LONGTEXT","interface":"textarea","default_value":null,"options":{"rows":12},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+{"sort":null,"field":"color","type":"string","datatype":"VARCHAR","interface":"color","default_value":null,"options":{"input":"hex","output":"hex","formatValue":true,"palette":["#f44336","#9C27B0","#039BE5","#4CAF50","#FFC107"],"paletteOnly":false,"allowAlpha":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":20,"collection":"category"}
+
+{"sort":null,"field":"img","type":"file","datatype":"INT","interface":"file","default_value":null,"options":{"viewType":"cards","viewOptions":{"title":"title","subtitle":"type","content":"description","src":"data"},"viewQuery":[],"filters":[]},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+{"sort":null,"field":"avatar","type":"file","datatype":"INT","interface":"file","default_value":null,"options":{"viewType":"cards","viewOptions":{"title":"title","subtitle":"type","content":"description","src":"data"},"viewQuery":[],"filters":[]},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+{"sort":null,"field":"priceimg","type":"file","datatype":"INT","interface":"file","default_value":null,"options":{"viewType":"cards","viewOptions":{"title":"title","subtitle":"type","content":"description","src":"data"},"viewQuery":[],"filters":[]},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+{"sort":null,"field":"packtnc","type":"string","datatype":"VARCHAR","interface":"text-input","default_value":null,"options":{"trim":true,"showCharacterCount":true,"formatValue":false,"width":"auto"},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":200,"collection":"category"}
+
+{"sort":null,"field":"display","type":"boolean","datatype":"TINYINT","interface":"toggle","default_value":null,"options":{"checkbox":false},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"option"}
+
+{"sort":null,"field":"package","type":"o2m","datatype":null,"interface":"one-to-many","default_value":null,"options":{},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"collection":"category"}
+
+{"sort":null,"field":"locale","type":"string","datatype":"VARCHAR","interface":"radio-buttons","default_value":null,"options":{"choices":{"zh":"zh","en":"en"},"format":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"length":100,"collection":"category"}
+
+{"sort":null,"field":"ref_key","type":"integer","datatype":"INT","interface":"numeric","default_value":null,"options":{"localized":true},"readonly":false,"required":false,"unique":false,"note":null,"hidden_detail":false,"hidden_browse":false,"primary_key":false,"validation":null,"signed":true,"collection":"category"}
+
+POST http://13.113.165.41/_/relations
+{"collection_many":"package","field_many":"id","collection_one":"category","field_one":"package"}

@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  oracle:
+    image: sath89/oracle-12c
+    container_name: "oracle-12c"
+    volumes:
+      - ./:/u01/app/oracle
+    restart: always
+    ports:
+      - "1521:1521"
+# networks:
+#   default:
+#     external:
+#       name: cluster
